@@ -1,10 +1,7 @@
 ##Cadastro_Users
 import tkinter as tk
-from tkinter import *
 from tkinter import ttk
-
 from tkinter import messagebox
-
 from src.firebase_config import auth, db
 
 
@@ -50,7 +47,6 @@ def tela_cadastro():
     tk.Label(root_cadasto, text="Senha: ").grid(row=4, column=0)
     senha_entry = tk.Entry(root_cadasto, show="*")
     senha_entry.grid(row=4, column=1)
-
 
     ttk.Button(root_cadasto, text="Next", command=cadastrar_usuario).grid(column=1, row=5)
     root_cadasto.mainloop()
