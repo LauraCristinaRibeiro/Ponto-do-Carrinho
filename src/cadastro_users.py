@@ -9,6 +9,12 @@ from src.firebase_config import auth, db
 
 
 def cadastrar_usuario(email, senha, nome, cargo):
+
+    email = email_entry.get()
+    senha = senha_entry.get()
+    nome = nome_entry.get()
+    cargo = cargo_entry.get()
+
     try:
         user = auth.create_user_with_email_and_password(email, senha)
         uid = user['localId']
@@ -26,7 +32,7 @@ def cadastrar_usuario(email, senha, nome, cargo):
 
 
 def tela_cadastro():
-
+    global nome_entry, email_entry, cargo_entry, senha_entry
     root_cadasto = tk.Tk()
     frm = ttk.Frame(root_cadasto, padding=10)
     frm.grid()
