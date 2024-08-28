@@ -1,8 +1,10 @@
 import tkinter as tk
 
+from cadastro_users import tela_cadastro
+from cadastro_produtos import telaCadProdutos
 from login import tela_login
 
-from cadastro_users import tela_cadastro
+
 def tela_pincipal():
     # Create the main window
     tela_inicial = tk.Tk()
@@ -14,6 +16,10 @@ def tela_pincipal():
 
     btn_inicializar_login = tk.Button(tela_inicial, text="cadastro", command=tela_cadastro)
     btn_inicializar_login.pack(pady=10)
+
+    btn_inicializar_login = tk.Button(tela_inicial, text="cadastro produtos", command=telaCadProdutos)
+    btn_inicializar_login.pack(pady=10)
+
 
     # Start the Tkinter event loop
     tela_inicial.mainloop()
