@@ -16,7 +16,7 @@ tk.Label(telaCadProdutos, text="Cadastrar Marca: ").grid(row=1, column=0)
 tk.Entry(telaCadProdutos, textvariable=entrada2).grid(row=1, column=1)
 
 tk.Label(telaCadProdutos, text="Cadastrar Preço: ").grid(row=2, column=0)
-tk.Entry(telaCadProdutos, textvariable=entrada2).grid(row=2, column=1)
+tk.Entry(telaCadProdutos, textvariable=entrada3).grid(row=2, column=1)
 
 tk.Button(telaCadProdutos, text="Confirmar")
 
@@ -28,6 +28,13 @@ def realizar_confirmar():
     except:
         messagebox.showerror("ERRO", "FALHA AO CADASTRAR PRODUTO")
 
+def add_produto(nome, marca, preco):
+  produto_ref = db.collection('produtos').document()
+  produto_ref.set({
+    'nome': nome,
+    'marca': marca,
+    'preco': preco
+  })
 
 btn_confirmar = tk.Button(telaCadProdutos, text="CONFIRMAR", command=realizar_confirmar)
 btn_confirmar.grid(row=3, column=1, pady=10)
