@@ -1,10 +1,9 @@
 import tkinter as tk
 
 from cadastro_users import tela_cadastro
-from cadastro_produtos import telaCadProdutos
 from login import tela_login
 from perfil import mostrar_perfil
-
+from cadastro_produtos import realizar_cadastro
 def tela_pincipal():
     # Create the main window
     tela_inicial = tk.Tk()
@@ -17,7 +16,7 @@ def tela_pincipal():
     btn_inicializar_login = tk.Button(tela_inicial, text="cadastro", command=tela_cadastro)
     btn_inicializar_login.pack(pady=10)
 
-    btn_inicializar_login = tk.Button(tela_inicial, text="cadastro produtos", command=telaCadProdutos)
+    btn_inicializar_login = tk.Button(tela_inicial, text="cadastro produtos", command=realizar_cadastro)
     btn_inicializar_login.pack(pady=10)
 
     btn_inicializar_login = tk.Button(tela_inicial, text="mostrar perfil", command=mostrar_perfil)
