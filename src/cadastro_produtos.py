@@ -16,7 +16,7 @@ tk.Label(telaCadProdutos, text="Cadastrar Marca: ").grid(row=1, column=0)
 tk.Entry(telaCadProdutos, textvariable=entrada2).grid(row=1, column=1)
 
 tk.Label(telaCadProdutos, text="Cadastrar Preço: ").grid(row=2, column=0)
-tk.Entry(telaCadProdutos, textvariable=entrada2).grid(row=2, column=1)
+tk.Entry(telaCadProdutos, textvariable=entrada3).grid(row=2, column=1)
 
 tk.Button(telaCadProdutos, text="Confirmar")
 

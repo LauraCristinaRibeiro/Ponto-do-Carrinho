@@ -9,6 +9,7 @@ def realizar_login():
     senha = senha_entry.get()
 
     try:
+
         user = auth.sign_in_with_email_and_password(email, senha)
         messagebox.showinfo("SUCESSO", "LOGIN REALIZADO COM EXITO!")
         return user
