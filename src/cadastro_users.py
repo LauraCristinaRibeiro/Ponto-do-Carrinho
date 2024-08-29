@@ -54,4 +54,3 @@ def tela_cadastro():
     ttk.Button(root_cadasto, text="Next", command=cadastrar_usuario).grid(column=1, row=5)
     root_cadasto.mainloop()
 
-
