@@ -1,7 +1,7 @@
 import tkinter as tk
 from tkinter import messagebox
 
-
+from firebase_config import auth
 
 
 def realizar_login():
@@ -9,10 +9,13 @@ def realizar_login():
     senha = senha_entry.get()
 
     try:
-       # user = auth.sign_in_with_email_and_password(email, senha)
+
+        user = auth.sign_in_with_email_and_password(email, senha)
         messagebox.showinfo("SUCESSO", "LOGIN REALIZADO COM EXITO!")
+        return user
     except:
         messagebox.showerror("ERRO", "FALHA AO FAZER LOGIN")
+        return None
 
 
 def tela_login():
