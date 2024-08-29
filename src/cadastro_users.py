@@ -55,4 +55,3 @@ def tela_cadastro():
     root_cadasto.mainloop()
 
 
-

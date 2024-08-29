@@ -20,6 +20,7 @@ def iniciar_firebase():
   #conexão com o firestore
   #db = firestore.client()
 
+
   firebase = pyrebase.initialize_app(firebaseConfig)
   auth = firebase.auth()
 
