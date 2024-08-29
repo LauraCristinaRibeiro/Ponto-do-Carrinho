@@ -17,9 +17,9 @@ def iniciar_firebase():
 
   # cred = credentials.Certificate("credentials/ponto-do-carrinho-firebase-adminsdk-75r4y-2314d9ff24.json")
   # firebase_admin.initialize_app(cred)
-
-  #conexão com o firestore
-  #db = firestore.client()
+  #
+  # conexão com o firestore
+  # db = firestore.client()
 
   firebase = pyrebase.initialize_app(firebaseConfig)
   auth = firebase.auth()
