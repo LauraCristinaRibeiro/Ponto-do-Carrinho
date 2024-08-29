@@ -5,7 +5,7 @@ from tkinter import messagebox
 from src.firebase_config import auth, db
 
 
-def cadastrar_usuario(email, senha, nome, cargo):
+def cadastrar_usuario():
 
     email = email_entry.get()
     senha = senha_entry.get()
@@ -16,7 +16,7 @@ def cadastrar_usuario(email, senha, nome, cargo):
         user = auth.create_user_with_email_and_password(email, senha)
         uid = user['localId']
         #criar o documento com o UID com ID
-        db.collection('users').document(uid).set({
+        db.colection('users').document(uid).set({
             "nome": nome,
             "email": email,
             "cargo": cargo
@@ -34,10 +34,6 @@ def tela_cadastro():
 
     root_cadasto = tk.Toplevel()
     root_cadasto.title("Cadastro de Usuários")
-    # frm = ttk.Frame(root_cadasto, padding=10)
-    # frm.grid()
-    # ttk.Label(frm, text="Cadastro de users!").grid(column=0, row=0)
-
 
     tk.Label(root_cadasto, text="Nome: ").grid(row=1, column=0)
     nome_entry = tk.Entry(root_cadasto)

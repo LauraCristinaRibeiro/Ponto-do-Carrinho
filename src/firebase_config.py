@@ -14,9 +14,8 @@ def iniciar_firebase():
     "appId": "1:129982363572:web:9ad5ad2e43232a60d564e1"
   }
 
-
-  # cred = credentials.Certificate("credentials/ponto-do-carrinho-firebase-adminsdk-75r4y-2314d9ff24.json")
-  # firebase_admin.initialize_app(cred)
+  cred = credentials.Certificate("credentials/ponto-do-carrinho-firebase-adminsdk-75r4y-2314d9ff24.json")
+  firebase_admin.initialize_app(cred)
 
   #conexão com o firestore
   #db = firestore.client()
@@ -32,13 +31,13 @@ auth, db = iniciar_firebase()
 
 
 #função para adicionar usuários
-def add_user(nomeUser, email, cargo):
-  user = db.collection('users').document()
-  user.set({
-    'nomeUser': nomeUser,
-    'email': email,
-    'cargo': cargo
-  })
+# def add_user(nomeUser, email, cargo):
+#   user = db.collection('users').document()
+#   user.set({
+#     'nomeUser': nomeUser,
+#     'email': email,
+#     'cargo': cargo
+#   })
 
 
 #função de recuperar dados do usuário
