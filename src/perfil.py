@@ -13,13 +13,13 @@ def mostrar_perfil(user_id):
         label_nome = tk.Label(root,text=f"Nome: {user_data['nome']}")
         label_nome.pack(pady=10)
 
-
         label_email = tk.Label(root,text=f"Email: {user_data['email']}")
         label_email.pack(pady=10)
 
 
         label_cargo = tk.Label(root,text=f"Cargo: {user_data['cargo']}")
         label_cargo.pack(pady=10)
+
 
         window_width = 1000
         window_height = 1000
