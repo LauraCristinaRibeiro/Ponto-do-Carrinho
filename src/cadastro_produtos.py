@@ -58,36 +58,36 @@ import tkinter as tk
 from firebase_config import add_product
 
 class CadastroProdutosWindow(tk.Frame):
-def __init__(self, master=None):
-super().__init__(master)
-self.master = master
-self.create_widgets()
+    def __init__(self, master=None):
+        super().__init__(master)
+        self.master = master
+        self.create_widgets()
 
-def create_widgets(self):
-self.name_label = tk.Label(self, text=&quot;Nome do Produto:&quot;)
-self.name_label.pack()
+    def create_widgets(self):
+        self.name_label = tk.Label(self, text="Nome do Produto:")
+        self.name_label.pack()
 
-self.name_entry = tk.Entry(self)
-self.name_entry.pack()
+        self.name_entry = tk.Entry(self)
+        self.name_entry.pack()
 
-self.marca_label = tk.Label(self, text=&quot;Marca:&quot;)
-self.marca_label.pack()
+        self.marca_label = tk.Label(self, text="Marca:")
+        self.marca_label.pack()
 
-self.marca_entry = tk.Entry(self)
-self.marca_entry.pack()
+        self.marca_entry = tk.Entry(self)
+        self.marca_entry.pack()
 
-self.price_label = tk.Label(self, text=&quot;Preço:&quot;)
-self.price_label.pack()
+        self.price_label = tk.Label(self, text="Preço:")
+        self.price_label.pack()
 
-self.price_entry = tk.Entry(self)
-self.price_entry.pack()
+        self.price_entry = tk.Entry(self)
+        self.price_entry.pack()
 
-self.add_button = tk.Button(self, text=&quot;Cadastrar&quot;, command=self.add_product)
-self.add_button.pack()
+        self.add_button = tk.Button(self, text="Cadastrar", command=self.add_product)
+        self.add_button.pack()
 
-def add_product(self):
-name = self.name_entry.get()
-marca = self.marca_entry.get()
-price = float(self.price_entry.get())
-add_product(name, marca, price)
-tk.messagebox.showinfo(&quot;Sucesso&quot;, &quot;Produto cadastrado com sucesso!&quot;)
+    def add_product(self):
+        name = self.name_entry.get()
+        marca = self.marca_entry.get()
+        price = float(self.price_entry.get())
+        add_product(name, marca, price)
+        tk.messagebox.showinfo("Sucesso", "Produto cadastrado com sucesso!")
