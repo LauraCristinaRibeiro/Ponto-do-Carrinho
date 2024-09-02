@@ -75,7 +75,5 @@ class LoginWindow(tk.Frame):
         else:
             messagebox.showerror("Erro", "Credenciais inválidas!")
 
-cadastrousers.py
-import tkinter as tk
-from firebase import add_user
+
 
