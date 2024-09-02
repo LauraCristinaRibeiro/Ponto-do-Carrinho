@@ -1,30 +1,139 @@
+# import tkinter as tk
+# #from login import LoginWindow
+# from cadastro_users import CadastroUsersWindow
+# # #from cadastro_produtos import CadastroProdutosWindow
+# # from consulta_produtos import PesquisaWindow
+# # from perfil import PerfilWindow
+#
+# def main():
+#     root = tk.Tk()
+#     root.title("Ponto do Carrinho")
+#     root.geometry("400x400")
+#
+#     def on_login_success(user_data):
+#         for widget in root.winfo_children():
+#             widget.destroy()
+#
+#         tk.Label(root, text=f"Bem-vindo, {user_data['name']}!").pack()
+#
+#         perfil_button = tk.Button(root, text="Perfil", command=lambda: open_perfil(user_data))
+#         perfil_button.pack()
+#
+#         cadastro_produtos_button = tk.Button(root, text="Cadastrar Produto", command=open_cadastro_produtos)
+#         cadastro_produtos_button.pack()
+#
+#         pesquisa_button = tk.Button(root, text="Pesquisar Produto", command=open_pesquisa)
+#         pesquisa_button.pack()
+#
+#     def open_login():
+#         for widget in root.winfo_children():
+#             widget.destroy()
+#         LoginWindow(root, on_login_success).pack()
+#
+#     def open_cadastro_users():
+#         for widget in root.winfo_children():
+#             widget.destroy()
+#         CadastroUsersWindow(root).pack()
+#
+#     def open_cadastro_produtos():
+#         for widget in root.winfo_children():
+#             widget.destroy()
+#         CadastroProdutosWindow(root).pack()
+#
+#     def open_pesquisa():
+#         for widget in root.winfo_children():
+#             widget.destroy()
+#         PesquisaWindow(root).pack()
+#
+#     def open_perfil(user_data):
+#         for widget in root.winfo_children():
+#             widget.destroy()
+#         PerfilWindow(root, user_data).pack()
+#
+#     # Menu Principal
+#     login_button = tk.Button(root, text="Login", command=open_login)
+#     login_button.pack()
+#
+#     cadastro_users_button = tk.Button(root, text="Cadastrar Usuário", command=open_cadastro_users)
+#     cadastro_users_button.pack()
+#
+#     pesquisa_button = tk.Button(root, text="Pesquisar Produto", command=open_pesquisa)
+#     pesquisa_button.pack()
+#
+#     root.mainloop()
+#
+# if __name__ == "__main__":
+#     main()
+
 import tkinter as tk
+from login import LoginWindow
+from cadastro_users import CadastroUsersWindow
+from cadastro_produtos import CadastroProdutosWindow
+from consulta_produtos import PesquisaWindow
+from perfil import PerfilWindow
 
-from cadastro_users import tela_cadastro
-from login import tela_login
-from perfil import mostrar_perfil
-from cadastro_produtos import realizar_cadastro
-def tela_pincipal():
-    # Create the main window
-    tela_inicial = tk.Tk()
-    tela_inicial.title("Tela Inicial")
+def main():
+root = tk.Tk()
+root.title(&quot;Ponto do Carrinho&quot;)
+root.geometry(&quot;400x400&quot;)
 
-    # Create a button that will call the tela_login function when clicked
-    btn_inicializar_login = tk.Button(tela_inicial, text="Iniciar Login", command=tela_login)
-    btn_inicializar_login.pack(pady=10)
+def on_login_success(user_data):
+for widget in root.winfo_children():
+widget.destroy()
 
-    btn_inicializar_login = tk.Button(tela_inicial, text="cadastro", command=tela_cadastro)
-    btn_inicializar_login.pack(pady=10)
+tk.Label(root, text=f&quot;Bem-vindo, {user_data[&#39;name&#39;]}!&quot;).pack()
 
-    btn_inicializar_login = tk.Button(tela_inicial, text="cadastro produtos", command=realizar_cadastro)
-    btn_inicializar_login.pack(pady=10)
+perfil_button = tk.Button(root, text=&quot;Perfil&quot;, command=lambda:
+open_perfil(user_data))
+perfil_button.pack()
 
-    btn_inicializar_login = tk.Button(tela_inicial, text="mostrar perfil", command=mostrar_perfil)
-    btn_inicializar_login.pack(pady=10)
+cadastro_produtos_button = tk.Button(root, text=&quot;Cadastrar Produto&quot;,
+command=open_cadastro_produtos)
+cadastro_produtos_button.pack()
 
-    # Start the Tkinter event loop
-    tela_inicial.mainloop()
+pesquisa_button = tk.Button(root, text=&quot;Pesquisar Produto&quot;,
+command=open_pesquisa)
+pesquisa_button.pack()
 
-if __name__ == "__main__":
-    tela_pincipal()
+def open_login():
+for widget in root.winfo_children():
+widget.destroy()
+LoginWindow(root, on_login_success).pack()
+
+def open_cadastro_users():
+for widget in root.winfo_children():
+widget.destroy()
+CadastroUsersWindow(root).pack()
+
+def open_cadastro_produtos():
+for widget in root.winfo_children():
+widget.destroy()
+CadastroProdutosWindow(root).pack()
+
+def open_pesquisa():
+for widget in root.winfo_children():
+widget.destroy()
+PesquisaWindow(root).pack()
+
+def open_perfil(user_data):
+for widget in root.winfo_children():
+widget.destroy()
+PerfilWindow(root, user_data).pack()
+
+# Menu Principal
+login_button = tk.Button(root, text=&quot;Login&quot;, command=open_login)
+login_button.pack()
+
+cadastro_users_button = tk.Button(root, text=&quot;Cadastrar Usuário&quot;,
+command=open_cadastro_users)
+cadastro_users_button.pack()
+
+pesquisa_button = tk.Button(root, text=&quot;Pesquisar Produto&quot;,
+command=open_pesquisa)
+pesquisa_button.pack()
+
+root.mainloop()
+
+if __name__ == &quot;__main__&quot;:
+main()
 

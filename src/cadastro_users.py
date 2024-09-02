@@ -1,57 +1,44 @@
-##Cadastro_Users
 import tkinter as tk
-from tkinter import ttk
-from tkinter import messagebox
-from src.firebase_config import auth, db
+from firebase_config import add_user
 
+class CadastroUsersWindow(tk.Frame):
+    def __init__(self, master=None):
+        super().__init__(master)
+        self.master = master
+        self.create_widgets()
 
-def cadastrar_usuario():
+    def create_widgets(self):
+        self.name_label = tk.Label(self, text="Nome:")
+        self.name_label.pack()
 
-    email = email_entry.get()
-    senha = senha_entry.get()
-    nome = nome_entry.get()
-    cargo = cargo_entry.get()
+        self.name_entry = tk.Entry(self)
+        self.name_entry.pack()
 
-    try:
-        user = auth.create_user_with_email_and_password(email, senha)
-        uid = user['localId']
-        #criar o documento com o UID com ID
-        db.colection('users').document(uid).set({
-            "nome": nome,
-            "email": email,
-            "cargo": cargo
-        })
-        messagebox.showinfo("Sucesso", "Usuário cadastrado com sucesso")
-        return uid
-    except Exception as e:
-        messagebox.showerror("Erro", f"Falha ao cadastrar usuário. {e}")
-        return None
+        self.email_label = tk.Label(self, text="Email:")
+        self.email_label.pack()
 
+        self.email_entry = tk.Entry(self)
+        self.email_entry.pack()
 
-def tela_cadastro():
+        self.cargo_label = tk.Label(self, text="Cargo:")
+        self.cargo_label.pack()
 
-    global nome_entry, email_entry, cargo_entry, senha_entry
+        self.cargo_entry = tk.Entry(self)
+        self.cargo_entry.pack()
 
-    root_cadasto = tk.Toplevel()
-    root_cadasto.title("Cadastro de Usuários")
+        self.senha_label = tk.Label(self, text="Senha:")
+        self.senha_label.pack()
 
-    tk.Label(root_cadasto, text="Nome: ").grid(row=1, column=0)
-    nome_entry = tk.Entry(root_cadasto)
-    nome_entry.grid(row=1, column=1)
+        self.senha_entry = tk.Entry(self, show="*")
+        self.senha_entry.pack()
 
-    tk.Label(root_cadasto, text="Email: ").grid(row=2, column=0)
-    email_entry = tk.Entry(root_cadasto)
-    email_entry.grid(row=2, column=1)
+        self.add_button = tk.Button(self, text="Cadastrar", command=self.add_user)
+        self.add_button.pack()
 
-    tk.Label(root_cadasto, text="Cargo: ").grid(row=3, column=0)
-    cargo_entry = tk.Entry(root_cadasto)
-    cargo_entry.grid(row=3, column=1)
-
-    tk.Label(root_cadasto, text="Senha: ").grid(row=4, column=0)
-    senha_entry = tk.Entry(root_cadasto, show="*")
-    senha_entry.grid(row=4, column=1)
-
-    ttk.Button(root_cadasto, text="Next", command=cadastrar_usuario).grid(column=1, row=5)
-    root_cadasto.mainloop()
-
-
+    def add_user(self):
+        name = self.name_entry.get()
+        email = self.email_entry.get()
+        cargo = self.cargo_entry.get()
+        senha = self.senha_entry.get()
+        add_user(name, email, cargo, senha)
+        tk.messagebox.showinfo("Sucesso", "Usuário cadastrado com sucesso!")

@@ -1,44 +1,81 @@
 import tkinter as tk
 from tkinter import messagebox
+from firebase_config import get_user
 
-from firebase_config import auth
-
-
-def realizar_login():
-    email = email_entry.get()
-    senha = senha_entry.get()
-
-    try:
-
-        user = auth.sign_in_with_email_and_password(email, senha)
-        messagebox.showinfo("SUCESSO", "LOGIN REALIZADO COM EXITO!")
-        return user
-    except:
-        messagebox.showerror("ERRO", "FALHA AO FAZER LOGIN")
-        return None
-
-
-def tela_login():
-    tela_login = tk.Toplevel()
-
-    tela_login.title("LOGIN DO USUARIO")
-
-    tela_login.width = 600
-    tela_login.height = 600
-
-    tk.Label(tela_login, text="email: ").grid(row=0, column=0)
-    tk.Label(tela_login, text="senha: ").grid(row=1, column=0)
-
-    global email_entry, senha_entry
-    email_entry = tk.Entry(tela_login)
-    senha_entry = tk.Entry(tela_login, show="*")
-
-    email_entry.grid(row=0, column=1)
-    senha_entry.grid(row=1, column=1)
-
-    btn_login = tk.Button(tela_login, text="LOGIN", command=realizar_login)
-    btn_login.grid(row=2, column=1, pady=10)
+# class LoginWindow(tk.Frame):
+#     def __init__(self, master=None, on_login_success=None):
+#         super().__init__(master)
+#         self.master = master
+#         self.on_login_success = on_login_success
+#         self.create_widgets()
+#
+#     def create_widgets(self):
+#         self.email_label = tk.Label(self, text="Email:")
+#         self.email_label.pack()
+#
+#         self.email_entry = tk.Entry(self)
+#         self.email_entry.pack()
+#
+#         self.password_label = tk.Label(self, text="Senha:")
+#         self.password_label.pack()
+#
+#         self.password_entry = tk.Entry(self, show="*")
+#         self.password_entry.pack()
+#
+#         self.login_button = tk.Button(self, text="Login", command=self.check_login)
+#         self.login_button.pack()
+#
+#     def check_login(self):
+#         email = self.email_entry.get()
+#         senha = self.password_entry.get()
+#         user = get_user(email)
+#         if user and user['senha'] == senha:
+#             messagebox.showinfo("Sucesso", "Login realizado com sucesso!")
+#             if self.on_login_success:
+#                 self.on_login_success(user)
+#         else:
+#             messagebox.showerror("Erro", "Credenciais inválidas!")
 
 
+import tkinter as tk
+from tkinter import messagebox
+from firebase_config import get_user
 
-    tela_login.mainloop()
+class LoginWindow(tk.Frame):
+    def __init__(self, master=None, on_login_success=None):
+        super().__init__(master)
+        self.master = master
+        self.on_login_success = on_login_success
+        self.create_widgets()
+
+    def create_widgets(self):
+        self.email_label = tk.Label(self, text="Email:")
+        self.email_label.pack()
+
+        self.email_entry = tk.Entry(self)
+        self.email_entry.pack()
+
+        self.password_label = tk.Label(self, text="Senha:")
+        self.password_label.pack()
+
+        self.password_entry = tk.Entry(self, show="*")
+        self.password_entry.pack()
+
+        self.login_button = tk.Button(self, text="Login", command=self.check_login)
+        self.login_button.pack()
+
+    def check_login(self):
+        email = self.email_entry.get()
+        senha = self.password_entry.get()
+        user = get_user(email)
+        if user and user['senha'] == senha:
+            messagebox.showinfo("Sucesso", "Login realizado com sucesso!")
+            if self.on_login_success:
+                self.on_login_success(user)
+        else:
+            messagebox.showerror("Erro", "Credenciais inválidas!")
+
+cadastrousers.py
+import tkinter as tk
+from firebase import add_user
+
