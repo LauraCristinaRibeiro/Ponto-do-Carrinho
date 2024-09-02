@@ -1,10 +1,10 @@
 import tkinter as tk
 from tkinter import ttk
-from firebase_config import recuperar_user
+import firebase_config
 
 
 def mostrar_perfil(user_id):
-    user_data = recuperar_user(user_id)
+    user_data = firebase_config.recuperar_user(user_id)
     if (user_data):
         root = tk.Tk()
         root.title('Perfil')
