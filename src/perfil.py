@@ -53,7 +53,6 @@
 
 import tkinter as tk
 
-
 class PerfilWindow(tk.Frame):
     def __init__(self, master=None, user_data=None):
         super().__init__(master)
@@ -61,14 +60,12 @@ class PerfilWindow(tk.Frame):
         self.user_data = user_data
         self.create_widgets()
 
+    def create_widgets(self):
+        self.name_label = tk.Label(self, text=f"Nome: {self.user_data['name']}")
+        self.name_label.pack()
 
-def create_widgets(self):
-    self.name_label = tk.Label(self, text=f&quot;Nome: {self.user_data[&#39;name&#39;]}&quot;)
-    self.name_label.pack()
+        self.email_label = tk.Label(self, text=f"Email: {self.user_data['email']}")
+        self.email_label.pack()
 
-
-    self.email_label = tk.Label(self, text=f&quot;Email: {self.user_data[&#39;email&#39;]}&quot;)
-    self.email_label.pack()
-
-    self.cargo_label = tk.Label(self, text=f&quot;Cargo: {self.user_data[&#39;cargo&#39;]}&quot;)
-    self.cargo_label.pack()
+        self.cargo_label = tk.Label(self, text=f"Cargo: {self.user_data['cargo']}")
+        self.cargo_label.pack()

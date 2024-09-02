@@ -73,13 +73,13 @@ from consulta_produtos import PesquisaWindow
 from perfil import PerfilWindow
 
 def main():
-root = tk.Tk()
-root.title(&quot;Ponto do Carrinho&quot;)
-root.geometry(&quot;400x400&quot;)
+    root = tk.Tk()
+    root.title(&quot;Ponto do Carrinho&quot;)
+    root.geometry(&quot;400x400&quot;)
 
 def on_login_success(user_data):
-for widget in root.winfo_children():
-widget.destroy()
+    for widget in root.winfo_children():
+        widget.destroy()
 
 tk.Label(root, text=f&quot;Bem-vindo, {user_data[&#39;name&#39;]}!&quot;).pack()
 
@@ -96,29 +96,29 @@ command=open_pesquisa)
 pesquisa_button.pack()
 
 def open_login():
-for widget in root.winfo_children():
-widget.destroy()
-LoginWindow(root, on_login_success).pack()
+    for widget in root.winfo_children():
+        widget.destroy()
+        LoginWindow(root, on_login_success).pack()
 
 def open_cadastro_users():
-for widget in root.winfo_children():
-widget.destroy()
-CadastroUsersWindow(root).pack()
+    for widget in root.winfo_children():
+        widget.destroy()
+        CadastroUsersWindow(root).pack()
 
 def open_cadastro_produtos():
-for widget in root.winfo_children():
-widget.destroy()
-CadastroProdutosWindow(root).pack()
+    for widget in root.winfo_children():
+        widget.destroy()
+        CadastroProdutosWindow(root).pack()
 
 def open_pesquisa():
-for widget in root.winfo_children():
-widget.destroy()
-PesquisaWindow(root).pack()
+    for widget in root.winfo_children():
+        widget.destroy()
+        PesquisaWindow(root).pack()
 
 def open_perfil(user_data):
-for widget in root.winfo_children():
-widget.destroy()
-PerfilWindow(root, user_data).pack()
+    for widget in root.winfo_children():
+        widget.destroy()
+        PerfilWindow(root, user_data).pack()
 
 # Menu Principal
 login_button = tk.Button(root, text=&quot;Login&quot;, command=open_login)
@@ -135,5 +135,5 @@ pesquisa_button.pack()
 root.mainloop()
 
 if __name__ == &quot;__main__&quot;:
-main()
+    main()
 
