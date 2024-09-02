@@ -44,7 +44,7 @@ from firebase_config import add_user
 #         tk.messagebox.showinfo("Sucesso", "Usuário cadastrado com sucesso!")
 
 import tkinter as tk
-from firebase import add_user
+from firebase_config import add_user
 
 class CadastroUsersWindow(tk.Frame):
     def __init__(self, master=None):
