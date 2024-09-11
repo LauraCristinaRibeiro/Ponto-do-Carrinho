@@ -2,7 +2,7 @@ import firebase_admin
 from firebase_admin import credentials, firestore
 
 # Configuração do Firebase
-cred = credentials.Certificate("credentials/ponto-carrinho-firebase-AccountKey.json")
+cred = credentials.Certificate("credentials/ponto-carrinho-firebase.json")
 firebase_admin.initialize_app(cred)
 
 # Conexão com o Firestore
@@ -13,6 +13,7 @@ def add_user(name, email, cargo, senha):
     user_ref = db.collection('users').document(email)
     user_ref.set({
         'name': name,
+        'email': email,
         'cargo': cargo,
         'senha': senha
     })
