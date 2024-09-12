@@ -5,7 +5,7 @@ Seja Bem-Vindo ao Ponto do Carrinho.
 O Ponto do Carrinho visa ajudar o cliente de uma forma mais rápida e eficaz no momento em que ele for fazer suas compras.
 
 ## :chart_with_upwards_trend: Objetivo
-O principal objetivo do aplicativo é aumentar a demanda de produtos, ver os dados incluindo nome, marca, valor e peso.
+O principal objetivo do aplicativo é possibilitar a pesquisa de produtos, verificando os dados incluindo nome, marca, valor e peso.
 
 ## :chart_with_upwards_trend: Problemas Resolvidos
 * Visa os problemas perguntas sobre os preços.
@@ -57,7 +57,7 @@ Atualmente, o aplicativo foi  desenvolvido para o uso em geral todos os etabelec
 Este projeto está sobre licenciado sob a MIT License.
 
 ## :busts_in_silhouette: Autores e Contribuidores
-* Laurinha do Camarão - [GitHub](https://github.com/LauraCristinaRibeiro)
+* Laura Cristina - [GitHub](https://github.com/LauraCristinaRibeiro)
 * Matheus Leander - [GitHub](https://github.com/Matheusleander)
 * Marcos Raniery - [GitHub](https://github.com/Marcos-Raniery)
 * Lucas Raphael - [GitHub](https://github.com/Ragaso62)
